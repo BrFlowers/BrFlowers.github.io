@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Java学习笔记05(面向对象编程) | Brave_Flower`s lightBlog</title><meta name="author" content="Brave_Flower"><meta name="copyright" content="Brave_Flower"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="面向对象编程object oriented programming (OOP) 面向对象编程与面向过程编程的区别 具体案例  把大象装进冰箱  面向过程编程语言  分析出解决问题的步骤，把步骤一步步实现，面向对象编程语言更关注执行的过程   1.开门（）{}  2.装大象（）{}  3.关门（）{}  面向对象编程语言  先对整体进行分类，根据不同类的细节在进行深入处理。   冰箱类{ 开门（）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习笔记05(面向对象编程)">
+<meta property="og:url" content="https://www.brave-flower.top/2022/11/01/Java/java05/index.html">
+<meta property="og:site_name" content="Brave_Flower&#96;s lightBlog">
+<meta property="og:description" content="面向对象编程object oriented programming (OOP) 面向对象编程与面向过程编程的区别 具体案例  把大象装进冰箱  面向过程编程语言  分析出解决问题的步骤，把步骤一步步实现，面向对象编程语言更关注执行的过程   1.开门（）{}  2.装大象（）{}  3.关门（）{}  面向对象编程语言  先对整体进行分类，根据不同类的细节在进行深入处理。   冰箱类{ 开门（）">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.brave-flower.top/img/myImgs/coverImg/05.jpg">
+<meta property="article:published_time" content="2022-11-01T11:48:28.000Z">
+<meta property="article:modified_time" content="2022-11-01T11:48:28.000Z">
+<meta property="article:author" content="Brave_Flower">
+<meta property="article:tag" content="JavaSE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.brave-flower.top/img/myImgs/coverImg/05.jpg"><link rel="shortcut icon" href="/img/xueGao.png"><link rel="canonical" href="https://www.brave-flower.top/2022/11/01/Java/java05/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java学习笔记05(面向对象编程)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-01 19:48:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/myImgs/headImg/01.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其它（暂未开发）</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐鉴赏</span></a></li><li><a class="site-page child" href="/picture/"><i class="fa-fw fas fa-video"></i><span> 美图分享</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Brave_Flower`s lightBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其它（暂未开发）</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐鉴赏</span></a></li><li><a class="site-page child" href="/picture/"><i class="fa-fw fas fa-video"></i><span> 美图分享</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Java学习笔记05(面向对象编程)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-11-01T11:48:28.000Z" title="Created 2022-11-01 19:48:28">2022-11-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-11-01T11:48:28.000Z" title="Updated 2022-11-01 19:48:28">2022-11-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java学习笔记05(面向对象编程)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><p><em>object oriented programming (OOP)</em></p>
+<p><strong>面向对象编程与面向过程编程的区别</strong></p>
+<p><strong>具体案例</strong></p>
+<ul>
+<li><p>把大象装进冰箱</p>
+</li>
+<li><p>面向过程编程语言</p>
+<ul>
+<li>分析出解决问题的步骤，把步骤一步步实现，面向对象编程语言更关注执行的过程</li>
+</ul>
+</li>
+<li><p>1.开门（）{}</p>
+</li>
+<li><p>2.装大象（）{}</p>
+</li>
+<li><p>3.关门（）{}</p>
+</li>
+<li><p>面向对象编程语言</p>
+<ul>
+<li>先对整体进行分类，根据不同类的细节在进行深入处理。</li>
+</ul>
+</li>
+<li><p>冰箱类{</p>
+<p>开门（）</p>
+<p>关门（）</p>
+<p>}</p>
+<p>大象类{</p>
+<p>}</p>
+<p><strong>面向对象编程与面向过程编程是相辅相成的，不具有完全替代性</strong></p>
+</li>
+</ul>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h3 id="三个常见的成员"><a href="#三个常见的成员" class="headerlink" title="三个常见的成员"></a>三个常见的成员</h3><ul>
+<li><p>属性filed    负责静态特征（数据）</p>
+<ul>
+<li>例如 int id ;  <code>id则为一个静态特征，也就是数据</code></li>
+</ul>
+</li>
+<li><p>方法method    负责动态行为（对数据的操作）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">study</span><span class="params">()</span>&#123;</span><br><span class="line">System.our.println(<span class="string">&quot;正在学习！&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该方法为一个静态变量。</p>
+</li>
+<li><p>构造器constructor    负责初始化对象</p>
+</li>
+</ul>
+<p><strong>成员变量的默认值</strong></p>
+<ul>
+<li><code>整型：                             0</code></li>
+<li><code>浮点型：                   0.0    </code></li>
+<li><code>字符型：                &#39;\u0000&#39;</code></li>
+<li><code>布尔型:                   false</code></li>
+<li><code>所有引用类型：              null</code></li>
+</ul>
+<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><ul>
+<li>类：类是一个模板，它描述一类对象的行为和状态。</li>
+<li>对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状 态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等</li>
+<li>定义一个类的基本格式<br><code>[修饰符] class 类名&#123; 0到多个构造器 0到多个成员变量 0到多个方法 0到多个初始化块 &#125;</code></li>
+<li>修饰符可以写public final abstract或者不写，java类名要用大驼峰写法。一个java源文件（也就是文件后缀名为.java的文件）可以写多个类，但是里面只能有一个用public修饰的class；</li>
+</ul>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="comment">//静态特征(数据)</span></span><br><span class="line">    <span class="type">int</span> id;</span><br><span class="line">    String sname;</span><br><span class="line">    <span class="type">int</span> score;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    computer computer;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">study</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我正在学习!使用的电脑是:&quot;</span> + computer.brand);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        computer c1=<span class="keyword">new</span> <span class="title class_">computer</span>();</span><br><span class="line">        c1.brand=<span class="string">&quot;游侠G5&quot;</span>;</span><br><span class="line">        c1.price=<span class="number">8000</span>;</span><br><span class="line">        computer c2=<span class="keyword">new</span> <span class="title class_">computer</span>();</span><br><span class="line">        c2.brand=<span class="string">&quot;机械革命&quot;</span>;</span><br><span class="line">        c2.price=<span class="number">7000</span>;</span><br><span class="line">        testHello n1=<span class="keyword">new</span> <span class="title class_">testHello</span> ();</span><br><span class="line">        n1.id=<span class="number">2080</span>;</span><br><span class="line">        n1.sname=<span class="string">&quot;马牛逼&quot;</span>;</span><br><span class="line">        n1.age=<span class="number">18</span>;</span><br><span class="line">        n1.computer=c2;</span><br><span class="line">        n1.study();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="构造方法（构造器）Constructor"><a href="#构造方法（构造器）Constructor" class="headerlink" title="构造方法（构造器）Constructor"></a>构造方法（构造器）Constructor</h2><h3 id="构造方法的核心作用"><a href="#构造方法的核心作用" class="headerlink" title="构造方法的核心作用"></a>构造方法的核心作用</h3><ul>
+<li>用于对象的初始化，Java通过new关键字来调用构造器</li>
+</ul>
+<p><code>声明格式</code></p>
+<p><code>[修饰符] 类名 （形参列表）&#123;</code></p>
+<p><code>//n个语句</code></p>
+<p><code>&#125;</code></p>
+<h3 id="构造方法的四个要点"><a href="#构造方法的四个要点" class="headerlink" title="构造方法的四个要点"></a>构造方法的四个要点</h3><ul>
+<li>构造器通过new关键字调用；</li>
+<li>构造器虽然有返回值，但是不能定义返回值的类型（返回值的类型肯定是本类），不能再构造器里使用return返回某个值。</li>
+<li>如果没有定义构造器，则编译器会自动定义一个无参的构造器（方法）  如果已定义 则编译器不会自动添加。</li>
+<li>构造器的方法名必须和类名一致；</li>
+</ul>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*描述二维空间的一个点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Point</span> &#123;</span><br><span class="line">    <span class="type">double</span> x;</span><br><span class="line">    <span class="type">double</span> y;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Point</span> <span class="params">(<span class="type">double</span> _x, <span class="type">double</span> _y)</span>&#123; <span class="comment">//构造器</span></span><br><span class="line">        x = _x;</span><br><span class="line">        y = _y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] , args)</span>&#123;</span><br><span class="line">        <span class="type">Point</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Point</span>(_x:<span class="number">3.0</span>,_y:<span class="number">4</span>);</span><br><span class="line">        </span><br><span class="line">        System.out.println(p1.x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="创建对象4步和构造方法调用之间的关系"><a href="#创建对象4步和构造方法调用之间的关系" class="headerlink" title="创建对象4步和构造方法调用之间的关系"></a>创建对象4步和构造方法调用之间的关系</h3><ul>
+<li>分配对象空间，并将对象的成员对象初始化为0或空</li>
+<li>执行属性值的显示初始化 <code>int x = 100</code></li>
+<li>执行构造方法，初始化对象</li>
+<li>返回对象的地址，给相关的变量</li>
+</ul>
+<h3 id="构造方法的重载"><a href="#构造方法的重载" class="headerlink" title="构造方法的重载"></a>构造方法的重载</h3><p>构造方法与普通方法一样，可以进行重载</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment"> * 模拟网站的账户（用于测试构造方法的重载）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="type">int</span> id;</span><br><span class="line">    String uname;<span class="comment">//用户名</span></span><br><span class="line">    String pwd; <span class="comment">//密码</span></span><br><span class="line"></span><br><span class="line">    User()&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(<span class="type">int</span> _id)</span>&#123; <span class="comment">//创建构造器1</span></span><br><span class="line">        id = _id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(<span class="type">int</span> _id,String _uname,String _pwd)</span>&#123;</span><br><span class="line">        <span class="comment">//创建构造器2</span></span><br><span class="line">        id = _id;</span><br><span class="line">        uname = _uname;</span><br><span class="line">        pwd = _pwd;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//调用构造器2</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();  <span class="comment">//调用无参构造器</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1001</span>);<span class="comment">//调用构造器1</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="number">1002</span>,<span class="string">&quot;马牛逼&quot;</span>,<span class="string">&quot;12321&quot;</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="this的本质"><a href="#this的本质" class="headerlink" title="this的本质"></a>this的本质</h2><h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><ul>
+<li>this 的本质就是当前对象的地址</li>
+<li>普通方法中，this总是指向调用该方法的对象</li>
+<li>构造方法中，this总是指向正要初始化的对象</li>
+</ul>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment"> * this 的用法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User2</span> &#123;</span><br><span class="line">    <span class="type">int</span> id;</span><br><span class="line">    String name;</span><br><span class="line">    String pwd;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User2</span><span class="params">()</span>&#123; <span class="comment">//定义无参构造器</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User2</span><span class="params">(<span class="type">int</span> id,String name)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;正在要初始化的对象&quot;</span>+<span class="built_in">this</span>);<span class="comment">//得到对象的地址</span></span><br><span class="line">        <span class="comment">//id  = id  用法错误 如果想要吧id赋值给 代码第四行的id 必须使用this</span></span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User2</span><span class="params">(<span class="type">int</span> id,String name ,String pwd)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>(id , name ); <span class="comment">//调用了重载的构造器，这种调用必须位于构造方法的的第一行。</span></span><br><span class="line">        <span class="built_in">this</span>.pwd = pwd;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">login</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;要登陆:&quot;</span>+<span class="built_in">this</span>.name+<span class="string">&quot; 密码是:&quot;</span>+<span class="built_in">this</span>.pwd);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">User2</span> <span class="variable">u</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User2</span>(<span class="number">101</span>,<span class="string">&quot;马牛逼&quot;</span>);</span><br><span class="line">        u.login();</span><br><span class="line"></span><br><span class="line">        <span class="type">User2</span> <span class="variable">u3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User2</span>(<span class="number">102</span>,<span class="string">&quot;马牛逼&quot;</span>,<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        System.out.println(u3.pwd);</span><br><span class="line">        System.out.println( u3.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Static关键字"><a href="#Static关键字" class="headerlink" title="Static关键字"></a>Static关键字</h2><h3 id="核心用法"><a href="#核心用法" class="headerlink" title="核心用法"></a>核心用法</h3><ul>
+<li><p>用static声明的变量为静态成员变量，也为类变量，有以下特点：</p>
+<ul>
+<li><p>从属于类，只有一份，在类被载入时被显示格式化</p>
+</li>
+<li><p>一般使用 “类名.类属性/方法” 来调用</p>
+</li>
+<li><p>在static 方法中不可直接访问非static 成员</p>
+<p>​    //静态方法属于类 不属于对象</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestStatic</span> &#123;</span><br><span class="line">    <span class="type">int</span> id;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">company</span> <span class="operator">=</span> <span class="string">&quot;大公司&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="variable">companyId</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;类被初始化时调用&quot;</span>);</span><br><span class="line">        companyId = <span class="number">111222</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态方法</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printCompany</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//System.out.println(this);   在static方法里不能访问非static成员</span></span><br><span class="line">        System.out.println(company);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">login</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;登陆&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        TestStatic.printCompany(); <span class="comment">//直接调用static 不用new对象</span></span><br><span class="line">        <span class="type">TestStatic</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TestStatic</span>();</span><br><span class="line">        t1.login();</span><br><span class="line">        <span class="type">TestStatic</span> <span class="variable">t2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TestStatic</span>();</span><br><span class="line">        t2.login();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="static初始化模块"><a href="#static初始化模块" class="headerlink" title="static初始化模块"></a>static初始化模块</h3><ul>
+<li>构造方法用于对象的初始化</li>
+<li>静态初始化块，用于类的初始化操作</li>
+<li>可以初始化static属性</li>
+<li>在静态初始化块中不能直接访问非static成员。</li>
+</ul>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p><em>在类中或者方法中，使用{}括起来的一段代码，就称它是代码块。</em></p>
+<p><em>代码块分为：局部代码块、初始化代码块、静态代码块三种</em></p>
+<ul>
+<li><p>代码块的声明方式类似于一个没有名称的方法体，代码分实例块和静态块</p>
+<ul>
+<li><p>实例块：本质上放到构造方法当中执行的，因此每次创建对象的时候，都会执行初始化代码块； 可以通过反编译查看</p>
+<p><code>&#123;</code></p>
+<p>​      <code>//任何符合语法的Java代码</code></p>
+<p><code>&#125;</code></p>
+</li>
+<li><p>静态块: 静态代码块在加载字节码时就会自动调用，在主方法之前执行的。只执行一次，先于main方法。</p>
+<p><code>static&#123;、</code></p>
+<p>​    <code>//任何符合语法的Java代码</code></p>
+<p><code>&#125;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="brave-flower.top">Brave_Flower</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://www.brave-flower.top/2022/11/01/Java/java05/">https://www.brave-flower.top/2022/11/01/Java/java05/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">此文章版权归Brave_Flower所有，如有转载，请注明来自原作者</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaSE/">JavaSE</a></div><div class="post_share"><div class="social-share" data-image="/img/myImgs/coverImg/05.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/11/01/Java/java01/" title="Java学习笔记01(注释，数据类型)"><img class="cover" src="/img/myImgs/coverImg/01.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-01</div><div class="title">Java学习笔记01(注释，数据类型)</div></div></a></div><div><a href="/2022/11/01/Java/java02/" title="Java学习笔记02(运算符 位运算)"><img class="cover" src="/img/myImgs/coverImg/03.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-01</div><div class="title">Java学习笔记02(运算符 位运算)</div></div></a></div><div><a href="/2022/11/01/Java/java03/" title="Java学习笔记03(Scanner 循环操作)"><img class="cover" src="/img/myImgs/coverImg/02.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-01</div><div class="title">Java学习笔记03(Scanner 循环操作)</div></div></a></div><div><a href="/2022/11/01/Java/java04/" title="Java学习笔记04(数组)"><img class="cover" src="/img/myImgs/coverImg/04.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-01</div><div class="title">Java学习笔记04(数组)</div></div></a></div><div><a href="/2022/11/04/Java/java06/" title="Java学习笔记06(面向对象编程的三大特性)"><img class="cover" src="/img/myImgs/coverImg/07.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-04</div><div class="title">Java学习笔记06(面向对象编程的三大特性)</div></div></a></div><div><a href="/2022/11/04/Java/java07/" title="Java学习笔记07(常用类，Arrays，String)"><img class="cover" src="/img/myImgs/coverImg/08.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-04</div><div class="title">Java学习笔记07(常用类，Arrays，String)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/myImgs/headImg/01.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Brave_Flower</div><div class="author-info__description">萌新初学者，积攒exp_ing ~~~~~ 不定时更新中 (๑•̀ㅂ•́)و✧</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">面向对象编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E5%B8%B8%E8%A7%81%E7%9A%84%E6%88%90%E5%91%98"><span class="toc-number">2.1.</span> <span class="toc-text">三个常见的成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">2.2.</span> <span class="toc-text">类的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.3.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%88%E6%9E%84%E9%80%A0%E5%99%A8%EF%BC%89Constructor"><span class="toc-number">3.</span> <span class="toc-text">构造方法（构造器）Constructor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%B8%E5%BF%83%E4%BD%9C%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">构造方法的核心作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E5%9B%9B%E4%B8%AA%E8%A6%81%E7%82%B9"><span class="toc-number">3.2.</span> <span class="toc-text">构造方法的四个要点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">3.3.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A14%E6%AD%A5%E5%92%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.4.</span> <span class="toc-text">创建对象4步和构造方法调用之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-number">3.5.</span> <span class="toc-text">构造方法的重载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">4.</span> <span class="toc-text">this的本质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8"><span class="toc-number">4.1.</span> <span class="toc-text">本质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-number">4.1.1.</span> <span class="toc-text">代码示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">5.</span> <span class="toc-text">Static关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%94%A8%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text">核心用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2"><span class="toc-number">5.1.1.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static%E5%88%9D%E5%A7%8B%E5%8C%96%E6%A8%A1%E5%9D%97"><span class="toc-number">5.2.</span> <span class="toc-text">static初始化模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">代码块</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/04/%E5%B0%8F%E9%A1%B9%E7%9B%AE/%E6%8A%BD%E5%8D%A1%E6%A8%A1%E6%8B%9Fv2.0/" title="概率性抽卡模拟器v2.0(GUI实现)"><img src="/img/myImgs/coverImg/10.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率性抽卡模拟器v2.0(GUI实现)"/></a><div class="content"><a class="title" href="/2022/11/04/%E5%B0%8F%E9%A1%B9%E7%9B%AE/%E6%8A%BD%E5%8D%A1%E6%A8%A1%E6%8B%9Fv2.0/" title="概率性抽卡模拟器v2.0(GUI实现)">概率性抽卡模拟器v2.0(GUI实现)</a><time datetime="2022-11-04T03:19:17.000Z" title="Created 2022-11-04 11:19:17">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/04/Java/java08/" title="Java学习笔记08(包装类，Math类，Random类)"><img src="/img/myImgs/coverImg/09.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java学习笔记08(包装类，Math类，Random类)"/></a><div class="content"><a class="title" href="/2022/11/04/Java/java08/" title="Java学习笔记08(包装类，Math类，Random类)">Java学习笔记08(包装类，Math类，Random类)</a><time datetime="2022-11-04T03:16:39.000Z" title="Created 2022-11-04 11:16:39">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/04/Java/java07/" title="Java学习笔记07(常用类，Arrays，String)"><img src="/img/myImgs/coverImg/08.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java学习笔记07(常用类，Arrays，String)"/></a><div class="content"><a class="title" href="/2022/11/04/Java/java07/" title="Java学习笔记07(常用类，Arrays，String)">Java学习笔记07(常用类，Arrays，String)</a><time datetime="2022-11-04T03:12:23.000Z" title="Created 2022-11-04 11:12:23">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/04/Java/java06/" title="Java学习笔记06(面向对象编程的三大特性)"><img src="/img/myImgs/coverImg/07.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java学习笔记06(面向对象编程的三大特性)"/></a><div class="content"><a class="title" href="/2022/11/04/Java/java06/" title="Java学习笔记06(面向对象编程的三大特性)">Java学习笔记06(面向对象编程的三大特性)</a><time datetime="2022-11-04T02:59:06.000Z" title="Created 2022-11-04 10:59:06">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%9501/" title="算法01"><img src="/img/myImgs/coverImg/06.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法01"/></a><div class="content"><a class="title" href="/2022/11/02/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%9501/" title="算法01">算法01</a><time datetime="2022-11-02T06:11:50.000Z" title="Created 2022-11-02 14:11:50">2022-11-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Brave_Flower</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
